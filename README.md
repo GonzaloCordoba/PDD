@@ -1,2 +1,0 @@
-# PDD
-Plataformas de desarrollo
