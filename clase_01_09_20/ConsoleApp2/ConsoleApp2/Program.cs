@@ -7,7 +7,7 @@ namespace ConsoleApp2
                 static void Main(string[] args)
                 {
                     int chances = 0;
-                    int ingreso = 0;
+                    int ingreso;
 
                     Random random = new Random();
                     int secreto = random.Next(10);
@@ -15,7 +15,7 @@ namespace ConsoleApp2
                     do
                     {
                         string mensaje = "Ingrese el numero";
-                        Ingreso(mensaje, ref ingreso);
+                        Ingreso(mensaje, out ingreso);
                         chances++;
                         if (ingreso == secreto)
                         {
@@ -39,7 +39,7 @@ namespace ConsoleApp2
                 {
                     Console.WriteLine("Perdiste! el numero secreto es: " + valor);
                 }
-                static void Ingreso(string mensaje, ref int ingreso)
+                static void Ingreso(string mensaje, out int ingreso)
                 {
                     Console.WriteLine(mensaje);
                     ingreso = int.Parse(Console.ReadLine());
