@@ -8,12 +8,14 @@ namespace ConsoleApp2
                 {
                     int chances = 0;
                     int ingreso;
+                    int año;
 
                     Random random = new Random();
                     int secreto = random.Next(10);
 
                     do
-                    {
+                    {   
+                        
                         string mensaje = "Ingrese el numero";
                         Ingreso(mensaje, out ingreso);
                         chances++;
