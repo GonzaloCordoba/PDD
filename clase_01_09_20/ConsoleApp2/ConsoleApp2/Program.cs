@@ -14,8 +14,8 @@ namespace ConsoleApp2
 
                     do
                     {
-                        Console.WriteLine("Adivene el numero:");
-                        ingreso = int.Parse(Console.ReadLine());
+                        string mensaje = "Ingrese el numero";
+                        ingreso = Ingreso(mensaje);
                         chances++;
                         if (ingreso == secreto)
                         {
@@ -36,5 +36,10 @@ namespace ConsoleApp2
                     {
                         Console.WriteLine("Perdiste! el numero secreto es:" + valor);
                     }
+                    static int Ingreso(string mensaje) {
+
+                        Console.WriteLine(mensaje);
+                        return int.Parse(Console.ReadLine());
+        }
     }
 }
