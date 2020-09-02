@@ -19,16 +19,22 @@ namespace ConsoleApp2
                         chances++;
                         if (ingreso == secreto)
                         {
-                            Console.WriteLine("Ganaste!!");
+                            Ganaste();
                             chances = 0;
                         }
                         else if(chances == 3)
                         {
-                            Console.WriteLine("Perdiste! el numero secreto es:" + secreto);
-                    
+                            Perdiste(secreto);
                         }
 
-                    } while (ingreso != secreto && chances <= 3);
+                    } while (ingreso != secreto && chances < 3);
                 }
-            }
+                    static void Ganaste() {
+                        Console.WriteLine("Ganaste!!");
+                    }
+                    static void Perdiste(int valor)
+                    {
+                        Console.WriteLine("Perdiste! el numero secreto es:" + valor);
+                    }
+    }
 }
