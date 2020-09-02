@@ -9,7 +9,7 @@ namespace ConsoleApp3
             int anio;
             string mensaje = "Ingrese su año de nacimiento";
             IngresoAnio(mensaje, out anio);
-            Console.WriteLine(EsAniobiciesto(ref anio));
+            Console.WriteLine(EsAniobiciesto(anio));
             
             
         }
@@ -17,14 +17,17 @@ namespace ConsoleApp3
             Console.WriteLine(mensaje);
             anio= int.Parse(Console.ReadLine());
         }
-        static string EsAniobiciesto( ref int anio)
+        static Boolean EsAniobiciesto(int anio)
         {
-            if ((anio % 4 == 0) && (anio % 100 == 0) && (anio % 400 == 0))
+            if ((anio % 400 == 0))
             {
-                return "Es biciesto";
+                return true;
+            }
+            if((anio % 4 == 0) && (anio % 100 != 0)){
+                return true;
             }
             else {
-                return "No es biciesto";
+                return false;
             }
         }
     }
