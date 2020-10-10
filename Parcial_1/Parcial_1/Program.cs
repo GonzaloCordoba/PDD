@@ -9,7 +9,7 @@ namespace Parcial_1
         static void Main(string[] args)
         {
             //InsertarUsuarios();
-            //ConsultarUsuarios();
+            ConsultarUsuarios();
             //ActualizarUsuarios();
             //BorrarUsuarios();
         }
