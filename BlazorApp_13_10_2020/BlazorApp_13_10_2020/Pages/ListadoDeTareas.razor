@@ -1,0 +1,52 @@
+﻿
+@page "/ListadoDeTareas"
+
+
+@using BlazorApp_13_10_2020.Data
+@inject ListadoTareaService Service
+
+<h3>Listado De Tareas</h3>
+
+<p>This component demonstrates fetching data from a service.</p>
+
+@if (tarea == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Estado</th>
+                <th>Estimacion</th>
+                <th>Responsable Id</th>
+                <th>Vencimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in tarea)
+            {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Titulo</td>
+                <td>@p.Estado</td>
+                <td>@p.Estimacion</td>
+                <td>@p.ResponsableId</td>
+                <td>@p.Vencimiento</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Tarea[] tarea;
+
+    protected override async Task OnInitializedAsync()
+    {
+        tarea =  Service.GetListadoTareaAsync();
+    }
+}
