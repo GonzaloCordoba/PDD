@@ -1,7 +1,41 @@
-﻿@page "/ListadoDeUsuarios"
+﻿@page "/Usuarios/listado"
+@using BlazorApp_13_10_2020.Data
+@inject UsuarioService Service
 
 <h3>Listado De Usuarios</h3>
 
+if(usuarios = null){
+    <p><em>Loading...</em></p>
+}
+else{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Clave</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in usuarios)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.Nombre</td>
+                    <td>@p.Clave</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
 @code {
 
+    private List<Usuario> usuarios;
+
+    protected override async Task OnInitializedAsync()
+    {
+        usuarios = await Service.getAll();
+    }
 }

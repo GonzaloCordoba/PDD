@@ -30,6 +30,8 @@ namespace BlazorApp_13_10_2020
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<ListadoTareaService>();
+            services.AddSingleton<UsuarioService>();
+            services.AddSingleton<DataContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

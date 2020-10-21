@@ -11,7 +11,7 @@ namespace BlazorApp_13_10_2020.Data
         public String Vencimiento { get; set; }
         public int Estimacion { get; set; }
         public int ResponsableId { get; set; }
-     
+        public Recurso Responsable { get; set; }
         public Boolean Estado { get; set; }
 
     }
