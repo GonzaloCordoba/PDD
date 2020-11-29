@@ -28,7 +28,6 @@ namespace BlazorApp_13_10_2020
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<ListadoTareaService>();
             services.AddSingleton<UsuarioService>();
             services.AddSingleton<DataContext>();
